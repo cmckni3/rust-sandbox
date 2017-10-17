@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  sandbox:
+    container_name: rust-sandbox
+    environment:
+      - RUST_BACKTRACE=full
+    image: sandbox
+    build:
+      context: ../..
+      dockerfile: support/docker/Dockerfile
+    ports:
+      - 7878:7878
